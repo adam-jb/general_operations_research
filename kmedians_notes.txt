@@ -1,0 +1,36 @@
+
+k-medians psuedocode:
+drop in random start points
+assign closest values to make partition
+for each partition, assign new point based on medians of those one. This is multidimensional geometric median
+assign closest values again to each partition; assign new points; continue until little change (or less doesnt change much)
+
+article says geometric median has to be approximated, with sim annealing or Weiszeld's algorithm
+Same article also says there is no initialisation method which is better than random initialisation for finding global optimum
+	So presumably run it lots of times and take the result with the lowest loss to best represent the clusters
+	A python implemention could run the algo X times and return the iter with the lowest loss, inc classifications and centroids found
+link: http://worldcomp-proceedings.com/proc/p2015/CSC2663.pdf
+
+Weiszfeld's algorithm:
+iteratively reweighted least squares
+Gets a very good approximation according to wikipedia: https://en.wikipedia.org/wiki/Geometric_median#Computation
+
+For elbow method: kmeans in sklearn uses inertia (total sum of squared distances), which is one option, though also:
+	ratio of within-group variance to between-group variance
+
+Could implement with numba or numpy, and store as an object so the workflow echoes scipy and sklearn
+
+
+
+
+
+Facility location problem
+Optimal placement of facilities to minimize transportation costs while considering factors like avoiding placing hazardous materials near housing, and competitors' facilities
+
+Tends to run on a graph data structure
+
+
+
+
+algorithms book:
+http://www.r-5.org/files/books/computers/algo-list/common/Jon_Kleinberg_Eva_Tardos-Algorithm_Design-EN.pdf
